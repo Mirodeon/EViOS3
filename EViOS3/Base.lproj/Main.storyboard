@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xxu-M2-swj">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wlR-4H-Gnb">
+            <objects>
+                <tabBarController id="Xxu-M2-swj" customClass="TabBarController" customModule="EViOS3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uhk-w5-aYf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ys6-yK-7PL" kind="relationship" relationship="viewControllers" id="U9X-3m-0nU"/>
+                        <segue destination="WRh-Xs-OHw" kind="relationship" relationship="viewControllers" id="TQ3-7v-d2F"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w76-42-Ixf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-669" y="-24"/>
+        </scene>
+        <!--CryptoLive-->
+        <scene sceneID="edP-2I-Nke">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CryptoLive" id="ys6-yK-7PL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="CJS-ca-Glb"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bhl-la-4ZQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-54" y="-169"/>
+        </scene>
+        <!--Cryptos-->
+        <scene sceneID="EWg-z6-p7i">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Cryptos" id="WRh-Xs-OHw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="2Tu-Hz-Y46"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GHH-DR-k8e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-54" y="92"/>
+        </scene>
+    </scenes>
+</document>
