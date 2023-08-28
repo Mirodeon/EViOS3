@@ -17,10 +17,10 @@ class IllustrateCoins {
     init(data: Data) {
         let decoder = JSONDecoder()
         let dataDto = try! decoder.decode(DataIllustrateCoinsDto.self, from: data)
-        self.data = dataDto.data
+        self.data = dataDto.coins
     }
     
     struct DataIllustrateCoinsDto: Codable {
-        var data: [IllustrateCoin]
+        var coins: [IllustrateCoin]
     }
 }
