@@ -10,8 +10,10 @@ import SafariServices
 
 class CryptoLiveViewController: UIViewController {
     @IBOutlet weak var tableCoins: UITableView!
+    @IBOutlet weak var segmentCoins: UISegmentedControl!
     
     var coins: [Coins.Coin] = []
+    var currentList: [Coins.Coin] = []
     var loader: UIActivityIndicatorView?
     
     override func viewDidLoad() {
@@ -26,10 +28,29 @@ class CryptoLiveViewController: UIViewController {
         )
         
         tableCoins.separatorStyle = .none
-        
+        setSegment()
         loader = CustomLoader(color: .red, view: view).loader
         
         getCoinsAsync()
+    }
+    
+    func setSegment(){
+        segmentCoins.addTarget(self, action: #selector(segmentChange(segment:)), for: .valueChanged)
+    }
+    
+    @objc func segmentChange(segment: UISegmentedControl){
+        switch(segment.selectedSegmentIndex){
+        case 0:
+            currentList = coins
+            tableCoins.reloadData()
+        case 1:
+            currentList = coins.sorted { Double($0.priceUsd) ?? 0 < Double($1.priceUsd) ?? 0}
+            tableCoins.reloadData()
+        case 2:
+            currentList = coins.sorted { Double($0.priceUsd) ?? 0 > Double($1.priceUsd) ?? 0}
+            tableCoins.reloadData()
+        default: return
+        }
     }
     
     func getCoinsAsync() {
@@ -42,6 +63,7 @@ class CryptoLiveViewController: UIViewController {
                 } else {
                     if let coins = coins{
                         self.coins.append(contentsOf: coins.data)
+                        self.currentList = self.coins
                         self.tableCoins.reloadData()
                     }
                 }
@@ -66,7 +88,7 @@ extension CryptoLiveViewController: CoinCellClick {
 extension CryptoLiveViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return coins.count
+        return currentList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,7 +100,7 @@ extension CryptoLiveViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.setup(coin: coins[indexPath.row], onClick: self)
+        cell.setup(coin: currentList[indexPath.row], onClick: self)
         
         return cell
     }
@@ -92,7 +114,7 @@ extension CryptoLiveViewController: UITableViewDelegate, UITableViewDataSource {
         guard let vc = storyboard.instantiateViewController(identifier: "History") as? HistoryViewController else{
             return
         }
-        vc.coin = coins[indexPath.row]
+        vc.coin = currentList[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 }
