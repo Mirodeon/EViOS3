@@ -57,10 +57,10 @@ class CryptoLiveViewController: UIViewController {
             currentList = coins
             tableCoins.reloadData()
         case 1:
-            currentList = coins.sorted { Double($0.priceUsd) ?? 0 < Double($1.priceUsd) ?? 0}
+            currentList = coins.sorted { Double($0.changePercent24Hr) ?? 0 < Double($1.changePercent24Hr) ?? 0}
             tableCoins.reloadData()
         case 2:
-            currentList = coins.sorted { Double($0.priceUsd) ?? 0 > Double($1.priceUsd) ?? 0}
+            currentList = coins.sorted { Double($0.changePercent24Hr) ?? 0 > Double($1.changePercent24Hr) ?? 0}
             tableCoins.reloadData()
         default: return
         }
