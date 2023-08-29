@@ -30,19 +30,19 @@
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="CryptoLiveViewController" customModule="EViOS3" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bEZ-qF-w1C">
-                                <rect key="frame" x="0.0" y="154" width="393" height="615"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bEZ-qF-w1C">
+                                <rect key="frame" x="0.0" y="158" width="393" height="611"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewY-gy-GC9">
-                                <rect key="frame" x="28" y="103" width="337" height="51"/>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewY-gy-GC9">
+                                <rect key="frame" x="12" y="103" width="369" height="55"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xj3-u0-2E7">
-                                        <rect key="frame" x="29.666666666666657" y="8" width="278" height="32"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xj3-u0-2E7">
+                                        <rect key="frame" x="45.666666666666657" y="8" width="278" height="32"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <segments>
                                             <segment title="Default"/>
@@ -55,20 +55,20 @@
                                 <constraints>
                                     <constraint firstItem="Xj3-u0-2E7" firstAttribute="top" secondItem="ewY-gy-GC9" secondAttribute="top" constant="8" id="1e2-FB-b6b"/>
                                     <constraint firstItem="Xj3-u0-2E7" firstAttribute="centerX" secondItem="ewY-gy-GC9" secondAttribute="centerX" id="J0w-oL-dXH"/>
-                                    <constraint firstAttribute="bottom" secondItem="Xj3-u0-2E7" secondAttribute="bottom" constant="12" id="WMQ-CA-W0I"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xj3-u0-2E7" secondAttribute="bottom" constant="16" id="WMQ-CA-W0I"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="ewY-gy-GC9" secondAttribute="trailing" constant="12" id="K1M-7b-FrH"/>
                             <constraint firstItem="ewY-gy-GC9" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="LLR-Mk-HBu"/>
                             <constraint firstItem="bEZ-qF-w1C" firstAttribute="top" secondItem="ewY-gy-GC9" secondAttribute="bottom" id="Poh-HH-3cH"/>
+                            <constraint firstItem="ewY-gy-GC9" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="12" id="TbG-qT-51T"/>
                             <constraint firstAttribute="trailing" secondItem="bEZ-qF-w1C" secondAttribute="trailing" id="boZ-kQ-qSd"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="bEZ-qF-w1C" secondAttribute="bottom" id="fqU-yR-e4A"/>
                             <constraint firstItem="bEZ-qF-w1C" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="i2Y-5g-f52"/>
-                            <constraint firstItem="ewY-gy-GC9" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" constant="12" id="mKa-Qa-Clg"/>
+                            <constraint firstAttribute="trailing" secondItem="ewY-gy-GC9" secondAttribute="trailing" constant="12" id="zSz-LR-3bQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="CryptoLive" id="hNq-ra-Yhz"/>

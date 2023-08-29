@@ -13,8 +13,9 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
 
         let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
+        appearance.configureWithDefaultBackground()
         appearance.backgroundColor = .black
+        
         
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         

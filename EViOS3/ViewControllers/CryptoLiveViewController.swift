@@ -32,11 +32,12 @@ class CryptoLiveViewController: UIViewController {
         tableCoins.separatorStyle = .none
         setSegment()
         loader = CustomLoader(color: .red, view: view).loader
-        containerSegment.layer.cornerRadius = 12
+        containerSegment.layer.cornerRadius = 16
         containerSegment.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.tintColor = .red
+        refreshControl.backgroundColor = .clear
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         tableCoins.addSubview(refreshControl)
         
