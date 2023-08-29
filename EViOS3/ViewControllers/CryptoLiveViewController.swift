@@ -34,11 +34,15 @@ class CryptoLiveViewController: UIViewController {
         getCoinsAsync()
     }
     
-    func setSegment(){
+    func setSegment() {
         segmentCoins.addTarget(self, action: #selector(segmentChange(segment:)), for: .valueChanged)
     }
     
     @objc func segmentChange(segment: UISegmentedControl){
+        segmentCurrent(segment: segment)
+    }
+    
+    func segmentCurrent(segment: UISegmentedControl) {
         switch(segment.selectedSegmentIndex){
         case 0:
             currentList = coins
@@ -63,8 +67,7 @@ class CryptoLiveViewController: UIViewController {
                 } else {
                     if let coins = coins{
                         self.coins.append(contentsOf: coins.data)
-                        self.currentList = self.coins
-                        self.tableCoins.reloadData()
+                        self.segmentCurrent(segment: self.segmentCoins)
                     }
                 }
                 self.loader?.stopAnimating()
