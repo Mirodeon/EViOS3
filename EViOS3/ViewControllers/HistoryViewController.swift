@@ -24,6 +24,10 @@ class HistoryViewController: UIViewController {
             UINib(nibName: "RecordTableViewCell", bundle: nil),
             forCellReuseIdentifier: "RecordTableViewCell"
         )
+        tableHistory.register(
+            UINib(nibName: "LeadHistoryTableViewCell", bundle: nil),
+            forCellReuseIdentifier: "LeadHistoryTableViewCell"
+        )
         
         tableHistory.separatorStyle = .none
         loader = CustomLoader(color: .red, view: view).loader
@@ -60,20 +64,39 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier:"RecordTableViewCell",
-            for: indexPath
-        ) as? RecordTableViewCell else {
-            return UITableViewCell()
-        }
+        var cell = UITableViewCell()
         
-        cell.setup(record: history[indexPath.row])
+        if(indexPath.row == 0) {
+            guard let customCell = tableView.dequeueReusableCell(
+                withIdentifier:"LeadHistoryTableViewCell",
+                for: indexPath
+            ) as? LeadHistoryTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            if let coin = coin {
+                customCell.setup(record: history[indexPath.row], coin: coin)
+            }
+            
+            cell = customCell
+        } else {
+            guard let customCell = tableView.dequeueReusableCell(
+                withIdentifier:"RecordTableViewCell",
+                for: indexPath
+            ) as? RecordTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            customCell.setup(record: history[indexPath.row])
+            
+            cell = customCell
+        }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return view.frame.size.height/8
+        return indexPath.row == 0 ? 212 : view.frame.size.height/8
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -38,6 +38,8 @@
 		F3C123A82A9CE4410096A15A /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C123A72A9CE4410096A15A /* HistoryViewController.swift */; };
 		F3C123AB2A9CE7F20096A15A /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C123A92A9CE7F20096A15A /* RecordTableViewCell.swift */; };
 		F3C123AC2A9CE7F20096A15A /* RecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3C123AA2A9CE7F20096A15A /* RecordTableViewCell.xib */; };
+		F3C59CA12A9DCE9800705FF9 /* LeadHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C59C9F2A9DCE9800705FF9 /* LeadHistoryTableViewCell.swift */; };
+		F3C59CA22A9DCE9800705FF9 /* LeadHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3C59CA02A9DCE9800705FF9 /* LeadHistoryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		F3C123A72A9CE4410096A15A /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		F3C123A92A9CE7F20096A15A /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
 		F3C123AA2A9CE7F20096A15A /* RecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordTableViewCell.xib; sourceTree = "<group>"; };
+		F3C59C9F2A9DCE9800705FF9 /* LeadHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		F3C59CA02A9DCE9800705FF9 /* LeadHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeadHistoryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +234,7 @@
 			children = (
 				F3C1239F2A9CCCE80096A15A /* CoinTableViewCell.swift */,
 				F3C123A32A9CCCFE0096A15A /* IllustrateTableViewCell.swift */,
+				F3C59C9F2A9DCE9800705FF9 /* LeadHistoryTableViewCell.swift */,
 				F3C123A92A9CE7F20096A15A /* RecordTableViewCell.swift */,
 			);
 			path = Views;
@@ -240,6 +245,7 @@
 			children = (
 				F3C123A02A9CCCE80096A15A /* CoinTableViewCell.xib */,
 				F3C123A42A9CCCFE0096A15A /* IllustrateTableViewCell.xib */,
+				F3C59CA02A9DCE9800705FF9 /* LeadHistoryTableViewCell.xib */,
 				F3C123AA2A9CE7F20096A15A /* RecordTableViewCell.xib */,
 			);
 			path = Xibs;
@@ -381,6 +387,7 @@
 				F3C123A62A9CCCFE0096A15A /* IllustrateTableViewCell.xib in Resources */,
 				F3C123A22A9CCCE80096A15A /* CoinTableViewCell.xib in Resources */,
 				F3C123832A9CBB6A0096A15A /* CryptoLive.storyboard in Resources */,
+				F3C59CA22A9DCE9800705FF9 /* LeadHistoryTableViewCell.xib in Resources */,
 				F3C1234E2A9CB9030096A15A /* Assets.xcassets in Resources */,
 				F3C1234C2A9CB9010096A15A /* Main.storyboard in Resources */,
 			);
@@ -408,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3C123492A9CB9010096A15A /* ViewController.swift in Sources */,
+				F3C59CA12A9DCE9800705FF9 /* LeadHistoryTableViewCell.swift in Sources */,
 				F3C123852A9CBC090096A15A /* CryptoLiveViewController.swift in Sources */,
 				F3C123AB2A9CE7F20096A15A /* RecordTableViewCell.swift in Sources */,
 				F3C1237E2A9CBA8B0096A15A /* TabBarController.swift in Sources */,
