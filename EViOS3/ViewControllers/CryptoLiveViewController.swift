@@ -33,6 +33,7 @@ class CryptoLiveViewController: UIViewController {
         loader = CustomLoader(color: .red, view: view).loader
         
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.tintColor = .red
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         tableCoins.addSubview(refreshControl)
         
