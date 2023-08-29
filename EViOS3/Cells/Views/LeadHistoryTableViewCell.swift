@@ -10,6 +10,7 @@ import UIKit
 class LeadHistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var txtName: UILabel!
     @IBOutlet weak var txtPrice: UILabel!
+    @IBOutlet weak var containerHistory: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,7 +20,8 @@ class LeadHistoryTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        containerHistory.layer.cornerRadius = 12
+        containerHistory.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
     
     func setup(record: History.Record, coin: Coins.Coin){
