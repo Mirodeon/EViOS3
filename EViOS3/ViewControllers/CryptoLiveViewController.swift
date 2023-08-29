@@ -15,6 +15,7 @@ class CryptoLiveViewController: UIViewController {
     var coins: [Coins.Coin] = []
     var currentList: [Coins.Coin] = []
     var loader: UIActivityIndicatorView?
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,10 @@ class CryptoLiveViewController: UIViewController {
         tableCoins.separatorStyle = .none
         setSegment()
         loader = CustomLoader(color: .red, view: view).loader
+        
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableCoins.addSubview(refreshControl)
         
         getCoinsAsync()
     }
@@ -57,6 +62,10 @@ class CryptoLiveViewController: UIViewController {
         }
     }
     
+    @objc func refresh(_ sender: AnyObject) {
+        getCoinsAsync()
+    }
+    
     func getCoinsAsync() {
         loader?.startAnimating()
         CustomDispatch.delayed(delay: 0.7){
@@ -66,11 +75,12 @@ class CryptoLiveViewController: UIViewController {
                     
                 } else {
                     if let coins = coins{
-                        self.coins.append(contentsOf: coins.data)
+                        self.coins = coins.data
                         self.segmentCurrent(segment: self.segmentCoins)
                     }
                 }
                 self.loader?.stopAnimating()
+                self.refreshControl.endRefreshing()
             }
         }
     }
