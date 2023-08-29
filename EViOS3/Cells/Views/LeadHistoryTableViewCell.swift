@@ -22,6 +22,7 @@ class LeadHistoryTableViewCell: UITableViewCell {
 
         containerHistory.layer.cornerRadius = 12
         containerHistory.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        selectionStyle = .none
     }
     
     func setup(record: History.Record, coin: Coins.Coin){
