@@ -63,11 +63,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="ewY-gy-GC9" secondAttribute="trailing" constant="12" id="K1M-7b-FrH"/>
-                            <constraint firstItem="bEZ-qF-w1C" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="L8A-6Z-Oc8"/>
                             <constraint firstItem="ewY-gy-GC9" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="LLR-Mk-HBu"/>
                             <constraint firstItem="bEZ-qF-w1C" firstAttribute="top" secondItem="ewY-gy-GC9" secondAttribute="bottom" id="Poh-HH-3cH"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bEZ-qF-w1C" secondAttribute="trailing" id="R8d-db-FzM"/>
+                            <constraint firstAttribute="trailing" secondItem="bEZ-qF-w1C" secondAttribute="trailing" id="boZ-kQ-qSd"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="bEZ-qF-w1C" secondAttribute="bottom" id="fqU-yR-e4A"/>
+                            <constraint firstItem="bEZ-qF-w1C" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="i2Y-5g-f52"/>
                             <constraint firstItem="ewY-gy-GC9" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" constant="12" id="mKa-Qa-Clg"/>
                         </constraints>
                     </view>

@@ -40,7 +40,7 @@ class CryptoLiveViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         tableCoins.addSubview(refreshControl)
         
-        getCoinsAsync()
+        getCoinsAsync(refresh: false)
     }
     
     func setSegment() {
@@ -67,11 +67,13 @@ class CryptoLiveViewController: UIViewController {
     }
     
     @objc func refresh(_ sender: AnyObject) {
-        getCoinsAsync()
+        getCoinsAsync(refresh: true)
     }
     
-    func getCoinsAsync() {
-        loader?.startAnimating()
+    func getCoinsAsync(refresh: Bool) {
+        if(!refresh){
+            loader?.startAnimating()
+        }
         CustomDispatch.delayed(delay: 0.7){
             NetworkServices.assets { (coins, statusCode, error) in
                 if let finalError = error {
