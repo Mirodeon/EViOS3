@@ -11,6 +11,7 @@ import SafariServices
 class CryptoLiveViewController: UIViewController {
     @IBOutlet weak var tableCoins: UITableView!
     @IBOutlet weak var segmentCoins: UISegmentedControl!
+    @IBOutlet weak var containerSegment: UIView!
     
     var coins: [Coins.Coin] = []
     var currentList: [Coins.Coin] = []
@@ -31,6 +32,8 @@ class CryptoLiveViewController: UIViewController {
         tableCoins.separatorStyle = .none
         setSegment()
         loader = CustomLoader(color: .red, view: view).loader
+        containerSegment.layer.cornerRadius = 12
+        containerSegment.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.tintColor = .red

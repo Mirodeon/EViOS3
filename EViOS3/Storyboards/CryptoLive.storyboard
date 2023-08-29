@@ -38,36 +38,49 @@
                                 <rect key="frame" x="0.0" y="154" width="393" height="615"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xj3-u0-2E7">
-                                <rect key="frame" x="48" y="111" width="297" height="32"/>
-                                <segments>
-                                    <segment title="Default"/>
-                                    <segment title="Croissant"/>
-                                    <segment title="Décroissant"/>
-                                </segments>
-                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewY-gy-GC9">
+                                <rect key="frame" x="28" y="103" width="337" height="51"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xj3-u0-2E7">
+                                        <rect key="frame" x="29.666666666666657" y="8" width="278" height="32"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <segments>
+                                            <segment title="Default"/>
+                                            <segment title="Croissant"/>
+                                            <segment title="Décroissant"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Xj3-u0-2E7" firstAttribute="top" secondItem="ewY-gy-GC9" secondAttribute="top" constant="8" id="1e2-FB-b6b"/>
+                                    <constraint firstItem="Xj3-u0-2E7" firstAttribute="centerX" secondItem="ewY-gy-GC9" secondAttribute="centerX" id="J0w-oL-dXH"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xj3-u0-2E7" secondAttribute="bottom" constant="12" id="WMQ-CA-W0I"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Xj3-u0-2E7" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="3f8-8Y-HWB"/>
-                            <constraint firstItem="bEZ-qF-w1C" firstAttribute="top" secondItem="Xj3-u0-2E7" secondAttribute="bottom" constant="12" id="GrL-Bo-w9c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ewY-gy-GC9" secondAttribute="trailing" constant="12" id="K1M-7b-FrH"/>
                             <constraint firstItem="bEZ-qF-w1C" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="L8A-6Z-Oc8"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Xj3-u0-2E7" secondAttribute="trailing" constant="48" id="NJM-1L-jRp"/>
+                            <constraint firstItem="ewY-gy-GC9" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="LLR-Mk-HBu"/>
+                            <constraint firstItem="bEZ-qF-w1C" firstAttribute="top" secondItem="ewY-gy-GC9" secondAttribute="bottom" id="Poh-HH-3cH"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bEZ-qF-w1C" secondAttribute="trailing" id="R8d-db-FzM"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="bEZ-qF-w1C" secondAttribute="bottom" id="fqU-yR-e4A"/>
-                            <constraint firstItem="Xj3-u0-2E7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="48" id="sfl-Oq-Mja"/>
+                            <constraint firstItem="ewY-gy-GC9" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" constant="12" id="mKa-Qa-Clg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="CryptoLive" id="hNq-ra-Yhz"/>
                     <connections>
+                        <outlet property="containerSegment" destination="ewY-gy-GC9" id="uMd-0w-QG1"/>
                         <outlet property="segmentCoins" destination="Xj3-u0-2E7" id="NZu-Wh-4Sv"/>
                         <outlet property="tableCoins" destination="bEZ-qF-w1C" id="QZN-Zc-hJ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="590" y="-704"/>
+            <point key="canvasLocation" x="588.54961832061065" y="-704.22535211267609"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="VRL-fj-tsd">
