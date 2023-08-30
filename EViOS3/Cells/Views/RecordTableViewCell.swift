@@ -14,13 +14,19 @@ class RecordTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-       
+        
         selectionStyle = .none
+        addLineargradient(
+            left: UIColor.black.cgColor,
+            center: UIColor.white.cgColor,
+            right: UIColor.black.cgColor,
+            view: contentView
+        )
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -46,5 +52,18 @@ class RecordTableViewCell: UITableViewCell {
         let dateFormatterOutput = DateFormatter()
         dateFormatterOutput.dateStyle = .short
         return dateFormatterOutput.string(from: dateDate ?? Date())
+    }
+    
+    func addLineargradient(left: CGColor, center: CGColor, right: CGColor, view: UIView) {
+        let gradient: CAGradientLayer = {
+            let gradient = CAGradientLayer()
+            gradient.colors = [left, center, right]
+            gradient.locations = [0.0, 0.5, 1.0]
+            gradient.transform = CATransform3DMakeRotation(.pi / 2, 0, 0, 1)
+            return gradient
+        }()
+        
+        gradient.frame = view.bounds
+        view.layer.insertSublayer(gradient, at: 0)
     }
 }

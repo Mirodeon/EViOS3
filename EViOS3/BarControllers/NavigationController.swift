@@ -13,7 +13,8 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
 
         let appearance = UINavigationBarAppearance()
-        appearance.configureWithDefaultBackground()
+        appearance.configureWithOpaqueBackground()
+        
         appearance.backgroundColor = .black
         
         
@@ -25,4 +26,32 @@ class NavigationController: UINavigationController {
         
         navigationBar.tintColor = .white
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+//    func getLineargradient(top: CGColor, bottom: CGColor, view: UIView) -> CAGradientLayer {
+//        let gradient: CAGradientLayer = {
+//            let gradient = CAGradientLayer()
+//            gradient.colors = [top, bottom]
+//            gradient.locations = [ 0.0, 0.5]
+//            return gradient
+//        }()
+//
+//        gradient.frame = view.frame
+//        return gradient
+//    }
+//
+//    func image(fromLayer layer: CALayer) -> UIImage {
+//        UIGraphicsBeginImageContext(layer.frame.size)
+//
+//        layer.render(in: UIGraphicsGetCurrentContext()!)
+//
+//        let outputImage = UIGraphicsGetImageFromCurrentImageContext()
+//
+//        UIGraphicsEndImageContext()
+//
+//        return outputImage!
+//    }
 }
